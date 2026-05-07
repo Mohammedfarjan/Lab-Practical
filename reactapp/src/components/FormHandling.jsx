@@ -1,13 +1,24 @@
 import React from 'react'
 
-function FormHandling() {
+import { useState } from "react";
+
+function App() {
+  const [name, setName] = useState("");
+
   return (
     <div>
-        <input type="text">User Name : </input>
-        <input type="button" className='btn'>Click</input>
-    </div>
+      <h2>Enter Your Name</h2>
 
-  )
+      <input
+        type="text"
+        placeholder="Type your name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />
+
+      <p>Your Name: {name}</p>
+    </div>
+  );
 }
 
-export default FormHandling
+export default App;

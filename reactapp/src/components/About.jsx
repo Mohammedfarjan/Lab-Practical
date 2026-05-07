@@ -1,12 +1,23 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import { useState } from "react";
 
-function About(props) {
+function App() {
+  const [name, setName] = useState("");
+
   return (
-    <div>About</div>
-  )
+    <div>
+      <h2>Enter Your Name</h2>
+
+      <input
+        type="text"
+        placeholder="Type your name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />
+
+      <p>Your Name: {name}</p>
+    </div>
+  );
 }
 
-About.propTypes = {}
-
-export default About
+export default App;
